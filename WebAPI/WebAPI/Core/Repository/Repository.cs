@@ -44,7 +44,7 @@ namespace WebAPI.Core.Repository
             return _dbset.Remove(entity);
         }
 
-        public virtual void Edit(T entity)
+        public virtual void Update(T entity)
         {
             _entities.Entry(entity).State = System.Data.Entity.EntityState.Modified;
         }

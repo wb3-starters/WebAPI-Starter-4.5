@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using WebAPI.Components.User;
-using WebAPI.Components.User.Account;
+using WebAPI.Components.UserAccount;
 
 namespace WebAPI.Core
 {
@@ -14,13 +12,13 @@ namespace WebAPI.Core
         public WebAPIDbContext() : base() { }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Account> Accounts { get; set; }
+        public DbSet<UserAccount> UserAccounts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Account>()
+            modelBuilder.Entity<UserAccount>()
                 .Ignore(e => e.Password);
         }
 

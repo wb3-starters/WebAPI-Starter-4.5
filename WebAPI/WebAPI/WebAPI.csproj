@@ -154,6 +154,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Component\User\Controller\" />
+    <Folder Include="Component\User\Service\" />
     <Folder Include="Core\Message\Request\" />
     <Folder Include="Core\Message\Response\" />
     <Folder Include="Models\" />
@@ -164,9 +166,11 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Component\User\Account\Account.cs" />
-    <Compile Include="Component\User\Account\AccountTypeEnum.cs" />
+    <Compile Include="Component\UserAccount\UserAccount.cs" />
+    <Compile Include="Component\UserAccount\UserAccountTypeEnum.cs" />
+    <Compile Include="Component\User\Repository\IUserRepository.cs" />
     <Compile Include="Component\User\User.cs" />
+    <Compile Include="Component\User\Repository\UserRepository.cs" />
     <Compile Include="Component\Value\ValuesController.cs" />
     <Compile Include="Core\DbContext\WebAPIDbContext.cs" />
     <Compile Include="Core\Entity\AuditableEntity.cs" />
@@ -178,6 +182,8 @@
     <Compile Include="Core\Repository\Repository.cs" />
     <Compile Include="Core\Service\IService.cs" />
     <Compile Include="Core\Service\Service.cs" />
+    <Compile Include="Core\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Core\UnitOfWork\UnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

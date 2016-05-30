@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebAPI.Components.User.Account
+namespace WebAPI.Components.UserAccount
 {
-    public enum AccountTypeEnum
+    public enum UserAccountTypeEnum
     {
         Local = 1,
         Facebook = 2,

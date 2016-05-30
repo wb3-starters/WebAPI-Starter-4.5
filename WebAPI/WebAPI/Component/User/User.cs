@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebAPI.Components.User.Account;
+﻿using System.Collections.Generic;
 
 namespace WebAPI.Components.User
 {
@@ -10,6 +6,6 @@ namespace WebAPI.Components.User
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public List<Account.Account> Accounts { get; set; }
+        public List<UserAccount.UserAccount> UserAccounts { get; set; }
     }
 }
