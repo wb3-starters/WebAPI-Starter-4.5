@@ -155,7 +155,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Component\User\Controller\" />
-    <Folder Include="Component\User\Service\" />
     <Folder Include="Core\Message\Request\" />
     <Folder Include="Core\Message\Response\" />
     <Folder Include="Models\" />
@@ -169,6 +168,8 @@
     <Compile Include="Component\UserAccount\UserAccount.cs" />
     <Compile Include="Component\UserAccount\UserAccountTypeEnum.cs" />
     <Compile Include="Component\User\Repository\IUserRepository.cs" />
+    <Compile Include="Component\User\Service\IUserService.cs" />
+    <Compile Include="Component\User\Service\UserService.cs" />
     <Compile Include="Component\User\User.cs" />
     <Compile Include="Component\User\Repository\UserRepository.cs" />
     <Compile Include="Component\Value\ValuesController.cs" />
@@ -180,8 +181,6 @@
     <Compile Include="Core\Entity\IEntity.cs" />
     <Compile Include="Core\Repository\IRepository.cs" />
     <Compile Include="Core\Repository\Repository.cs" />
-    <Compile Include="Core\Service\IService.cs" />
-    <Compile Include="Core\Service\Service.cs" />
     <Compile Include="Core\UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="Core\UnitOfWork\UnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
