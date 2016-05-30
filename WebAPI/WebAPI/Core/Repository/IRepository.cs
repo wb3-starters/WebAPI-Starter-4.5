@@ -16,7 +16,7 @@ namespace WebAPI.Core.Repository
         IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate);
         T Add(T entity);
         T Delete(T entity);
-        void Update(T entity);
+        void Edit(T entity);
         void Save();
     }
 }
