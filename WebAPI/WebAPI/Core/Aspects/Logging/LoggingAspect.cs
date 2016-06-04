@@ -19,14 +19,11 @@ namespace WebAPI.Core.Aspects.Logging
     {     
         private static readonly ILog log = LogManager.GetLogger("TRACE");
         private string _fullMethodName;
-        private int indent = 0;
         
         #region Complie Time
         public override void CompileTimeInitialize(MethodBase method, AspectInfo aspectInfo)
         {
-            _fullMethodName = string.Format("{0}.{1}",
-                method.DeclaringType.FullName,
-                method.Name);
+            _fullMethodName = string.Format("{0}.{1}",method.DeclaringType.Name,method.Name);
 
             base.CompileTimeInitialize(method, aspectInfo);
         }
@@ -45,16 +42,14 @@ namespace WebAPI.Core.Aspects.Logging
             string message = string.Empty;
             try
             {
-                message = string.Format("{2}Entering [{0}] with parameters ( [{1}] )", _fullMethodName, MarshalObjectParameters(args), new string(' ',indent));
+                message = string.Format("[{0}] Entering with parameters: ({1})", _fullMethodName, MarshalObjectParameters(args));
                 log.Debug(message);
-                ++indent;
             }
             catch (Exception e)
 	        {
-                message = string.Format("LoggingAspect failed to log OnEntry in [{0}]", _fullMethodName);
+                message = string.Format("[{0}] LoggingAspect failed to log OnEntry.", _fullMethodName);
                 log.Error(message, e);
             }
-
             base.OnEntry(args);
         }
 
@@ -65,12 +60,12 @@ namespace WebAPI.Core.Aspects.Logging
             string message = string.Empty;
             try
             {
-                message = string.Format("{1}Successfully executed [{0}]", _fullMethodName, new string(' ', indent));
+                message = string.Format("[{0}] Successfully executed!", _fullMethodName);
                 log.Debug(message);
             }
             catch (Exception e)
             {
-                message = string.Format("LoggingAspect failed to log OnSuccess in [{0}]", _fullMethodName);
+                message = string.Format("[{0}] LoggingAspect failed to log OnSuccess.", _fullMethodName);
                 log.Error(message, e);
             }
             base.OnSuccess(args);
@@ -83,13 +78,12 @@ namespace WebAPI.Core.Aspects.Logging
             string message = string.Empty;
             try
             {
-                --indent;
-                message = string.Format("{2}Exception occured in [{0}] | [{1}]", _fullMethodName, args.Exception, new string(' ', indent));
+                message = string.Format("[{0}] -- Exception occured -- \n\n {1}", _fullMethodName, args.Exception);
                 log.Error(message, args.Exception);
             }
             catch (Exception e)
             {
-                message = string.Format("LoggingAspect failed to log OnException in [{0}]", _fullMethodName);
+                message = string.Format("[{0}] LoggingAspect failed to log OnException.", _fullMethodName);
                 log.Error(message, e);
             }
             base.OnException(args);
@@ -102,16 +96,14 @@ namespace WebAPI.Core.Aspects.Logging
             string message = string.Empty;
             try
             {
-                --indent;
-                message = string.Format("{2}Exiting [{0}] with value: ( [{1}] )", _fullMethodName, MarshalReturnValue(args), new string(' ', indent));
+                message = string.Format("[{0}] Exiting with value: ({1})", _fullMethodName, MarshalReturnValue(args));
                 log.Debug(message);
             }
             catch (Exception e)
             {
-                message = string.Format("LoggingAspect failed to log OnExit in [{0}]", _fullMethodName);
+                message = string.Format("[{0}] LoggingAspect failed to log OnExit. ", _fullMethodName);
                 log.Error(message, e);
             }
-
             base.OnExit(args);
         }
         #endregion
