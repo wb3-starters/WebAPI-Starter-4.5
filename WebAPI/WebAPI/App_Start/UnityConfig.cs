@@ -1,6 +1,9 @@
 using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
+using WebAPI.Component.User;
+using WebAPI.Component.User.Service;
+using WebAPI.Core;
+using System.Diagnostics;
 
 namespace WebAPI.App_Start
 {
@@ -36,7 +39,27 @@ namespace WebAPI.App_Start
             // container.LoadConfiguration();
 
             // TODO: Register your types here
-            // container.RegisterType<IProductRepository, ProductRepository>();
+            Debug.WriteLine("Registering Unity Container Types --- START");
+
+            container
+                .RegisterType<WebAPIDbContext, WebAPIDbContext>(new TransientLifetimeManager())
+                .RegisterType<UnitOfWork>(new TransientLifetimeManager())
+
+                //.RegisterType<UserService>(new TransientLifetimeManager())
+                //.RegisterType<UserRepository>(new TransientLifetimeManager())
+
+                .RegisterType<IUnitOfWork, UnitOfWork>(
+                    new InjectionConstructor(new ResolvedParameter(typeof(WebAPIDbContext))))
+
+                // User Components Registery
+                .RegisterType<IUserRepository, UserRepository>(
+                    new InjectionConstructor(new ResolvedParameter(typeof(WebAPIDbContext))))
+                .RegisterType<IUserService, UserService>(
+                    new InjectionConstructor(
+                        new ResolvedParameter(typeof(IUnitOfWork)),
+                        new ResolvedParameter(typeof(IUserRepository))));
+
+            Debug.WriteLine("Registering Unity Container Types --- FINISH");
         }
     }
 }

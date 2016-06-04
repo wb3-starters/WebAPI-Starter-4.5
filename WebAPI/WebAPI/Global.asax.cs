@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebAPI.App_Start;
 
 namespace WebAPI
 {
@@ -16,7 +17,9 @@ namespace WebAPI
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // Register Unity IoC in the Global Configuration so it can be accessed by the controllers
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityResolver(UnityConfig.GetConfiguredContainer());
         }
     }
 }

@@ -156,7 +156,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Core\Message\Request\" />
     <Folder Include="Core\Message\Response\" />
-    <Folder Include="Core\Service\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +163,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="App_Start\UnityResolver.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Component\UserAccount\UserAccount.cs" />
     <Compile Include="Component\UserAccount\UserAccountTypeEnum.cs" />
@@ -181,10 +181,10 @@
     <Compile Include="Core\Entity\Entity.cs" />
     <Compile Include="Core\Entity\IAuditableEntity.cs" />
     <Compile Include="Core\Entity\IEntity.cs" />
-    <Compile Include="Core\IService.cs" />
+    <Compile Include="Core\Service\IService.cs" />
     <Compile Include="Core\Repository\IRepository.cs" />
     <Compile Include="Core\Repository\Repository.cs" />
-    <Compile Include="Core\Service.cs" />
+    <Compile Include="Core\Service\Service.cs" />
     <Compile Include="Core\UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="Core\UnitOfWork\UnitOfWork.cs" />
     <Compile Include="Global.asax.cs">

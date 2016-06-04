@@ -10,8 +10,8 @@ namespace WebAPI.Component.User.Service
 {
     public class UserService : Service<Components.User.User>, IUserService
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IUserRepository _userRepository;
+        public IUnitOfWork _unitOfWork;
+        public IUserRepository _userRepository;
 
         /// <summary>
         /// Defalut constructor for dependency injection
@@ -26,7 +26,7 @@ namespace WebAPI.Component.User.Service
 
         public Components.User.User FindById(int id)
         {
-            return _userRepository.GetById(id);
+            return new Components.User.User() { FirstName = "Bill" }; //_userRepository.GetById(id);
         }
     }
 }
