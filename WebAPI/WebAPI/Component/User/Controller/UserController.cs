@@ -27,8 +27,19 @@ namespace WebAPI.Component.User.Controller
             try
             {
                 Components.User.User user = new Components.User.User();
-                _userService.FindById(id);
-                return request.CreateResponse(HttpStatusCode.OK, user);
+                HttpResponseMessage message = new HttpResponseMessage();
+
+                user = _userService.FindById(id);
+
+                if (user == null)
+                {
+                    string notFoundText = String.Format("User '{0}' does not exist", id.ToString());
+                    message = request.CreateResponse(HttpStatusCode.NotFound, notFoundText);
+                } else {
+                    message = request.CreateResponse(HttpStatusCode.OK, user);
+                }
+
+                return message;
             }
             catch(Exception ex)
             {

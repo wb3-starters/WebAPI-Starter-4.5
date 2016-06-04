@@ -12,14 +12,11 @@ namespace WebAPI.Core
         public WebAPIDbContext() : base() { }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<UserAccount> UserAccounts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            // Confgiure modelBuilder with fluentAPI here
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<UserAccount>()
-                .Ignore(e => e.Password);
         }
 
         public override int SaveChanges()

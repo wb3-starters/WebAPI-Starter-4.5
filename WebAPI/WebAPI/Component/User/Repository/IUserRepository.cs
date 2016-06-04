@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebAPI.Core.Repository;
+﻿using WebAPI.Core.Repository;
 
-namespace WebAPI.Component.User
+namespace WebAPI.Component.User.Repository
 {
 
     public interface IUserRepository : IRepository<Components.User.User>

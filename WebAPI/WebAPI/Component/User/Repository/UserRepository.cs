@@ -2,7 +2,7 @@
 using System.Linq;
 using WebAPI.Core.Repository;
 
-namespace WebAPI.Component.User
+namespace WebAPI.Component.User.Repository
 {
 
     public class UserRepository : Repository<Components.User.User>, IUserRepository

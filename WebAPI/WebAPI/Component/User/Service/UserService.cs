@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebAPI.Components.User;
+﻿using WebAPI.Component.User.Repository;
 using WebAPI.Core;
 
 namespace WebAPI.Component.User.Service
@@ -26,7 +21,7 @@ namespace WebAPI.Component.User.Service
 
         public Components.User.User FindById(int id)
         {
-            return new Components.User.User() { FirstName = "Bill" }; //_userRepository.GetById(id);
+            return _userRepository.GetById(id);
         }
     }
 }

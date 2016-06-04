@@ -6,6 +6,7 @@ namespace WebAPI.Components.User
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public List<UserAccount.UserAccount> UserAccounts { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

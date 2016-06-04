@@ -165,8 +165,6 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\UnityResolver.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Component\UserAccount\UserAccount.cs" />
-    <Compile Include="Component\UserAccount\UserAccountTypeEnum.cs" />
     <Compile Include="Component\User\Controller\IUserController.cs" />
     <Compile Include="Component\User\Controller\UserController.cs" />
     <Compile Include="Component\User\Repository\IUserRepository.cs" />
@@ -190,6 +188,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606040024317_Migration1.cs" />
+    <Compile Include="Migrations\201606040024317_Migration1.Designer.cs">
+      <DependentUpon>201606040024317_Migration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -206,6 +208,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606040024317_Migration1.resx">
+      <DependentUpon>201606040024317_Migration1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

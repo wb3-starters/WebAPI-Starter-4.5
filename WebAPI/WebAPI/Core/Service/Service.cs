@@ -20,7 +20,6 @@ namespace WebAPI.Core
             _repository = repository;
         }
 
-
         public virtual void Create(T entity)
         {
             if (entity == null)
@@ -30,7 +29,6 @@ namespace WebAPI.Core
             _repository.Add(entity);
             _unitOfWork.Commit();
         }
-
 
         public virtual void Update(T entity)
         {

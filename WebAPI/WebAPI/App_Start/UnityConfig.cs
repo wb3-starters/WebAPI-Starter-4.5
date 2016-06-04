@@ -1,9 +1,9 @@
 using System;
 using Microsoft.Practices.Unity;
-using WebAPI.Component.User;
 using WebAPI.Component.User.Service;
 using WebAPI.Core;
 using System.Diagnostics;
+using WebAPI.Component.User.Repository;
 
 namespace WebAPI.App_Start
 {
@@ -43,15 +43,10 @@ namespace WebAPI.App_Start
 
             container
                 .RegisterType<WebAPIDbContext, WebAPIDbContext>(new TransientLifetimeManager())
-                .RegisterType<UnitOfWork>(new TransientLifetimeManager())
-
-                //.RegisterType<UserService>(new TransientLifetimeManager())
-                //.RegisterType<UserRepository>(new TransientLifetimeManager())
-
                 .RegisterType<IUnitOfWork, UnitOfWork>(
                     new InjectionConstructor(new ResolvedParameter(typeof(WebAPIDbContext))))
 
-                // User Components Registery
+                // User components registery
                 .RegisterType<IUserRepository, UserRepository>(
                     new InjectionConstructor(new ResolvedParameter(typeof(WebAPIDbContext))))
                 .RegisterType<IUserService, UserService>(
