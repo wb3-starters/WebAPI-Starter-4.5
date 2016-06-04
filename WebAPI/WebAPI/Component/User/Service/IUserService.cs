@@ -7,8 +7,8 @@ using WebAPI.Core;
 
 namespace WebAPI.Component.User.Service
 {
-    public interface IUserService :IService<Components.User.User>
+    public interface IUserService :IService<Component.User.User>
     {
-        Components.User.User FindById(int id);
+        Component.User.User FindById(int id);
     }
 }

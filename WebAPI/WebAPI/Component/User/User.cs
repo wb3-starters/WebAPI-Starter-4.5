@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WebAPI.Components.User
+namespace WebAPI.Component.User
 {
     public class User : Core.AuditableEntity<int>
     {

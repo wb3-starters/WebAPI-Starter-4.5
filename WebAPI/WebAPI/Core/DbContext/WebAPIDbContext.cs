@@ -2,8 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Threading;
-using WebAPI.Components.User;
-using WebAPI.Components.UserAccount;
+using WebAPI.Component.User;
 
 namespace WebAPI.Core
 {

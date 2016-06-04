@@ -3,8 +3,8 @@
 namespace WebAPI.Component.User.Repository
 {
 
-    public interface IUserRepository : IRepository<Components.User.User>
+    public interface IUserRepository : IRepository<Component.User.User>
     {
-        Components.User.User GetById(long id);
+        Component.User.User GetById(long id);
     }
 }

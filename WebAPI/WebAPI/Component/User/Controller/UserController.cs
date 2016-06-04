@@ -21,12 +21,12 @@ namespace WebAPI.Component.User.Controller
 
         [Route("{id}")]
         [HttpGet]
-        [ResponseType(typeof(Components.User.User))]
+        [ResponseType(typeof(Component.User.User))]
         public HttpResponseMessage UserById(int id, HttpRequestMessage request)
         {
             try
             {
-                Components.User.User user = new Components.User.User();
+                Component.User.User user = new Component.User.User();
                 HttpResponseMessage message = new HttpResponseMessage();
 
                 user = _userService.FindById(id);
@@ -35,17 +35,19 @@ namespace WebAPI.Component.User.Controller
                 {
                     string notFoundText = String.Format("User '{0}' does not exist", id.ToString());
                     message = request.CreateResponse(HttpStatusCode.NotFound, notFoundText);
-                } else {
+                }
+                else
+                {
                     message = request.CreateResponse(HttpStatusCode.OK, user);
                 }
 
                 return message;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return request.CreateErrorResponse(HttpStatusCode.NotFound, ex.ToString());
             }
-            
+
         }
     }
 }

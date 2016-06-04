@@ -3,7 +3,7 @@ using WebAPI.Core;
 
 namespace WebAPI.Component.User.Service
 {
-    public class UserService : Service<Components.User.User>, IUserService
+    public class UserService : Service<Component.User.User>, IUserService
     {
         public IUnitOfWork _unitOfWork;
         public IUserRepository _userRepository;
@@ -19,7 +19,7 @@ namespace WebAPI.Component.User.Service
             _userRepository = userRepository;
         }
 
-        public Components.User.User FindById(int id)
+        public Component.User.User FindById(int id)
         {
             return _userRepository.GetById(id);
         }

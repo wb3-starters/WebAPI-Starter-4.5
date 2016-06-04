@@ -1,0 +1,35 @@
+DEBUG - Entering [WebAPI.Component.User.Controller.UserController.UserById] with parameters ( [1; Method: GET, RequestUri: 'http://localhost:21746/api/user/1', Version: 1.1, Content: System.Web.Http.WebHost.HttpControllerHandler+LazyStreamContent, Headers:
+{
+  Cache-Control: max-age=0
+  Connection: keep-alive
+  Accept: text/html
+  Accept: application/xhtml+xml
+  Accept: application/xml; q=0.9
+  Accept: image/webp
+  Accept: */*; q=0.8
+  Accept-Encoding: gzip
+  Accept-Encoding: deflate
+  Accept-Encoding: sdch
+  Accept-Language: en-US
+  Accept-Language: en; q=0.8
+  Cookie: _ga=GA1.1.2022604008.1459656368
+  Host: localhost:21746
+  User-Agent: Mozilla/5.0
+  User-Agent: (Windows NT 10.0; WOW64)
+  User-Agent: AppleWebKit/537.36
+  User-Agent: (KHTML, like Gecko)
+  User-Agent: Chrome/50.0.2661.102
+  User-Agent: Safari/537.36
+  Upgrade-Insecure-Requests: 1
+}] )
+DEBUG - Entering [WebAPI.Component.User.Service.UserService.FindById] with parameters ( [1] )
+DEBUG - Entering [WebAPI.Component.User.Repository.UserRepository.GetById] with parameters ( [1] )
+DEBUG -  Successfully executed [WebAPI.Component.User.Repository.UserRepository.GetById]
+DEBUG - Exiting [WebAPI.Component.User.Repository.UserRepository.GetById] with value: ( [No Return Value] )
+DEBUG -  Successfully executed [WebAPI.Component.User.Service.UserService.FindById]
+DEBUG - Exiting [WebAPI.Component.User.Service.UserService.FindById] with value: ( [No Return Value] )
+DEBUG -  Successfully executed [WebAPI.Component.User.Controller.UserController.UserById]
+DEBUG - Exiting [WebAPI.Component.User.Controller.UserController.UserById] with value: ( [StatusCode: 404, ReasonPhrase: 'Not Found', Version: 1.1, Content: System.Net.Http.ObjectContent`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], Headers:
+{
+  Content-Type: application/json; charset=utf-8
+}] )

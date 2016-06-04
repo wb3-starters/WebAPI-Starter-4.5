@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WebAPI;
 using WebAPI.Controllers;
 
-namespace WebAPI.Tests.Controllers
+namespace WebAPI.Tests.Components.Value
 {
     [TestClass]
     public class ValuesControllerTest
