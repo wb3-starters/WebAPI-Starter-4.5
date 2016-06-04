@@ -38,9 +38,7 @@ namespace WebAPI.App_Start
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();
 
-            // TODO: Register your types here
-            Debug.WriteLine("Registering Unity Container Types --- START");
-
+            // Register your types here
             container
                 .RegisterType<WebAPIDbContext, WebAPIDbContext>(new TransientLifetimeManager())
                 .RegisterType<IUnitOfWork, UnitOfWork>(
@@ -53,8 +51,6 @@ namespace WebAPI.App_Start
                     new InjectionConstructor(
                         new ResolvedParameter(typeof(IUnitOfWork)),
                         new ResolvedParameter(typeof(IUserRepository))));
-
-            Debug.WriteLine("Registering Unity Container Types --- FINISH");
         }
     }
 }
