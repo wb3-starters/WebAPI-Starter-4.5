@@ -2,7 +2,6 @@
 using PostSharp.Aspects;
 using PostSharp.Extensibility;
 using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
@@ -60,7 +59,7 @@ namespace WebAPI.Core.Aspects.Logging
             string message = string.Empty;
             try
             {
-                message = string.Format("[{0}] Successfully executed!", _fullMethodName);
+                message = string.Format("[{0}] Successfully executed.", _fullMethodName);
                 log.Debug(message);
             }
             catch (Exception e)
